@@ -24,13 +24,20 @@ app.use('/users', usersRouter);
 
 //jossun lisäämät
 
-/*app.get('/', function (req, res) {
+app.get('/', function (req, res) {
   res.render('mainpage', { title: 'Hey', message: 'Hello there!' })
-})*/
-
-app.get("/", (req, res) => {
-    res.render("mainpage");
 });
+
+/*app.get("/", (req, res) => {
+    res.render("mainpage");
+	
+}); */
+
+/*router.get("/", (req, res) => {
+    res.render("mainpage", {
+        user: req.user
+    });*/
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
