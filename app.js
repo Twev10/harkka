@@ -25,11 +25,11 @@ app.use('/users', usersRouter);
 //jossun lisäämät
 
 app.get('/', function (req, res) {
-  res.render('mainpage', { title: 'Hey', message: 'Hello there!' })
+  res.render('mainpage');
 });
 
 /*app.get("/", (req, res) => {
-    res.render("mainpage");
+    res.render("mainpage.pug");
 	
 }); */
 
