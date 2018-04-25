@@ -1,3 +1,12 @@
+ //db connection
+ var mongoose = require('mongoose'); 
+ var dev_db_url = 'mongodb://<Teemu>:<Kumiankka66>@ds255319.mlab.com:55319/wwwharjoitus'; 
+ var mongoDB = process.env.MONGODB_URI || dev_db_url; 
+ mongoose.connect(mongoDB); 
+ mongoose.Promise = global.Promise; 
+ var db = mongoose.connection; 
+ db.on('error', console.error.bind(console, 'MongoDB connection error:')); 
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
