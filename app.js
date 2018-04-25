@@ -1,6 +1,6 @@
  //db connection
  var mongoose = require('mongoose'); 
- var dev_db_url = 'mongodb://<Teemu>:<Kumiankka66>@ds255319.mlab.com:55319/wwwharjoitus'; 
+ var dev_db_url = 'mongodb://jossu:kumiankka@ds255319.mlab.com:55319/wwwharjoitus'; 
  var mongoDB = process.env.MONGODB_URI || dev_db_url; 
  mongoose.connect(mongoDB); 
  mongoose.Promise = global.Promise; 
@@ -14,6 +14,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var catalog = require('./routes/catalog');
 var usersRouter = require('./routes/users');
 
 var app = express();
