@@ -5,9 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('harkkadirectory:server');
+var debug = require('debug')('harkkadirectory:db_connection');
 var http = require('http');
-var serv = require('../server');
+var serv = require('../db_connection');
 
 /**
  * Get port from environment and store in Express.

@@ -1,6 +1,6 @@
 
 .maincontainer {
-background-color: grey;
+background-color: #A0A0A0;
 width: 50%;
 margin: auto;
 padding: 15px;
@@ -12,3 +12,15 @@ h1 {
 	text-align: center;
 	
 }
+
+tr, td {
+	
+	 display: inline-block;
+}
+
+td {
+	padding: 10px;
+	border: solid black 1px;
+	border-right: 10px;
+}
+

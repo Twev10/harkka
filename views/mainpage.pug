@@ -5,11 +5,38 @@ meta(charset='utf-8')
 title Kumiankkavuokraus
 link(rel='stylesheet', type='text/css', href='stylesheets/mainstyle.css')
 
+
 body
 h1 Vuokraustilanne
 
-div.maincontainer
+.maincontainer
+
+script(type='text/javascript').
+var opts = {
+url: 'localhost:3000/rows/'
+};
+fetch(opts)
+.then((res) => {
+if (res.ok) {
+return res.json();
+}
+})
+.then((rows) => {
+for (let row of rows) {
+// row will be a mysql row -- you can loop over these and do what you want with them
+}
+})
+.catch(console.log);</body></html>
+
+
 	tr
-	input(type='text' name='id' value='')
+		td 
+			| Tuote
+		td 
+			| Väri
+		td 
+			| Otsikko
+		td 
+			| Otsikko
 		
 

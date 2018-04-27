@@ -1,0 +1,12 @@
+extends mainpage.pug
+
+block content
+    h1= title
+    ul
+    each ankka in ankka_list
+        li
+            a(href=ankka.url) #{ankka.title}
+            |   (#{ankka.color.name})
+
+    else
+        li Ei ankkoja.       

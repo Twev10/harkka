@@ -1,11 +1,11 @@
  //db connection
- var mongoose = require('mongoose'); 
+/* var mongoose = require('mongoose'); 
  var dev_db_url = 'mongodb://jossu:kumiankka@ds255319.mlab.com:55319/wwwharjoitus'; 
  var mongoDB = process.env.MONGODB_URI || dev_db_url; 
  mongoose.connect(mongoDB); 
  mongoose.Promise = global.Promise; 
  var db = mongoose.connection; 
- db.on('error', console.error.bind(console, 'MongoDB connection error:')); 
+ db.on('error', console.error.bind(console, 'MongoDB connection error:'));  */
 
 var createError = require('http-errors');
 var express = require('express');
@@ -32,21 +32,12 @@ app.use(express.static(path.join(__dirname, '/public')));	//kauttaviiva vaihdett
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-//jossun lisäämät
+//renderöi etusivun
 
 app.get('/', function (req, res) {
   res.render('mainpage');
 });
 
-/*app.get("/", (req, res) => {
-    res.render("mainpage.pug");
-	
-}); */
-
-/*router.get("/", (req, res) => {
-    res.render("mainpage", {
-        user: req.user
-    });*/
 
 
 // catch 404 and forward to error handler
