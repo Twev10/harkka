@@ -1,10 +1,86 @@
+body {
+	
+	background-image: url("/images/background2.jpg");
+
+	
+}
 
 .maincontainer {
-background-color: #A0A0A0;
-width: 50%;
-margin: auto;
-padding: 15px;
-width: 50%;
+	background-color: #A0A0A0;
+	width: 50%;
+	height: 500px;
+	margin: auto;
+	padding: 15px;
+	border: 2px solid black;
+
+}
+.maincontaineradd {
+	background-color: #A0A0A0;
+	width: 20%;
+	height: auto;
+	margin: auto;
+	padding: 15px;
+	font-size: 18px;
+
+}
+
+.container {
+	background-color: #A0A0A0;
+	width: 50%;
+	
+	padding: 15px;
+
+}
+
+
+#ankat{
+	
+	display: inline-block;
+	float: left;
+	width: 200px;
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	font-size: 18px;
+}
+
+#tyypit{
+	
+	display: inline-block;
+	float: left;
+	width: 200px;
+	position: absolute;
+	top: 40%;
+	left: 45%;
+	font-size: 18px;
+}
+
+
+h2 {
+	
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+	margin-top: -10px;
+	text-decoration: underline;
+	
+	
+}
+
+
+
+#varit {
+	
+	
+	display: inline-block;
+	float: left;
+	width: 200px;
+	position: absolute;
+	right: 30%;
+	top: 40%;
+	font-size: 18px;
 }
 
 h1 {
@@ -13,14 +89,37 @@ h1 {
 	
 }
 
-tr, td {
-	
-	 display: inline-block;
+p {
+	text-align: center;
 }
 
-td {
+.linkit {
+	background-color: #c6c6c6;
+	width: 50%;
+	margin: auto;
+	margin-top: 3px;
+	margin-bottom: 3px;
 	padding: 10px;
-	border: solid black 1px;
-	border-right: 10px;
+	border: 2px solid black;
+	text-align: center;
+	
+	
+	
 }
 
+h4
+{
+ text-align: center;
+}
+
+form {
+	
+	font-size: 30px;
+	width: 200px;
+	margin: auto;
+	text-align:center; 
+}
+
+a {
+	padding: 15px;
+}

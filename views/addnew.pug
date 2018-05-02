@@ -1,0 +1,43 @@
+
+doctype html
+html
+head
+meta(charset='utf-8')
+title Lisää uusi tuote
+link(rel='stylesheet', type='text/css', href='stylesheets/mainstyle.css')
+
+
+body
+h1 Lisää uusi tuote
+
+.linkit
+	span
+	
+	a(href='/') Etusivu
+	
+	a(href='/add') Lisää tuote
+
+	a(href='/tiedot') Tiedot ja ohjeet
+
+	a(href='/galleria') Galleria
+			
+
+.maincontainer
+
+	.maincontaineradd
+		form(action='/myaction.js' method='post')
+		label(for='ankka') Ankka:
+		input#ankka(type='text' name='ankka' placeholder='duck')
+		br
+		br
+		label(for='color') Väri:
+		input#color(type='text' name='color' placeholder='color')
+		br
+		br
+		input(type='submit' value='Lähetä')
+
+
+	
+			
+
+			

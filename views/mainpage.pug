@@ -7,11 +7,50 @@ link(rel='stylesheet', type='text/css', href='stylesheets/mainstyle.css')
 
 
 body
-h1 Vuokraustilanne
+h1 Kumiankkavuokraamo
+
+.linkit
+	span
+	a(href='/add') Lisää tuote
+
+	a(href='/tiedot') Tiedot ja ohjeet
+
+	a(href='/galleria') Galleria
+			
 
 .maincontainer
+	
+	h2 Vuokrattavat ankat:
+	h3 Koko / Tyyppi / Väri
+
+	ul
+	
+		li#ankat
+		
+	
+			each item in rows
+				table= item.Ankka
+				br
+
+
+				
+	
+		li#varit
+	
+	
+			for item in rows
+				table= item.Color
+				br
+				
+				
+		li#tyypit
+	
+	
+			each item in rows
+				table= item.Tyyppi
+				br
 
 
 
-
-
+		
+		

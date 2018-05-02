@@ -1,59 +1,46 @@
- //db connection
-/* var mongoose = require('mongoose'); 
- var dev_db_url = 'mongodb://jossu:kumiankka@ds255319.mlab.com:55319/wwwharjoitus'; 
- var mongoDB = process.env.MONGODB_URI || dev_db_url; 
- mongoose.connect(mongoDB); 
- mongoose.Promise = global.Promise; 
- var db = mongoose.connection; 
- db.on('error', console.error.bind(console, 'MongoDB connection error:'));  */
-
-var createError = require('http-errors');
+var add = require('./routes/add');
+var tiedot = require('./routes/tiedot');
+var galleria = require('./routes/galleria');
 var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var catalog = require('./routes/catalog');
-var usersRouter = require('./routes/users');
-
+var http = require('http');
 var app = express();
+var pug = require('pug');
+var path = require('path');		
 
-// view engine setup
+var mysql = require('mysql');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '/public')));	//kauttaviiva vaihdettu publicin eteen
+app.use('/add', add);
+app.use('/tiedot', tiedot);
+app.use('/galleria', galleria);
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(express.static(path.join(__dirname, '/public')));
 
-//renderöi etusivun
-
-app.get('/', function (req, res) {
-  res.render('mainpage');
+var conn = mysql.createConnection({
+	host: '127.0.0.1',
+	user: 'Kumiankka',
+	password: 'kumiankka66',
+	database: 'ankkadb',
+	server: {
+		port: '3000'
+	}
 });
 
+conn.connect();
 
+conn.query('SELECT * FROM ankat', function(err, rows, fields) {
+	console.log(JSON.stringify(rows));
+	let r = rows;
+	app.get('/', function (req, res) {
+		
+	  res.render('mainpage', {
+		  rows: rows
+	  });
+	});
+  });
+  
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
+  app.listen(3001);
+  
+  module.exports = app;
